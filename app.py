@@ -1,8 +1,7 @@
 from flask import Flask, render_template, jsonify, redirect, url_for, request, json
+from dotenv import load_dotenv
 import openai
 import textwrap
-
-from dotenv import load_dotenv
 import os
 
 load_dotenv()
@@ -58,10 +57,6 @@ def format_text(text):
     formatted_text = '\n\n'.join(formatted_paragraphs)
 
     return formatted_text
-
-@app.route("/json")
-def get_json():
-    return jsonify({'name':'bob', "age": 1})
 
 @app.route("/gotohome")
 def gotohome():
