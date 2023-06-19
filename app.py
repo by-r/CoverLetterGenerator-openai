@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, redirect, url_for, request, json
 import openai
+import textwrap
 
 from dotenv import load_dotenv
 import os
@@ -26,12 +27,37 @@ def home():
             max_tokens = 512,
             temperature=0.99,
             frequency_penalty=0.3,
+            n=1,
         )
         
-        text = response['choices'][0]['text']
+        text = format_text(response['choices'][0]['text'])
         
         return render_template("coverletter.html", text = text)
     return render_template("index.html")
+
+def format_text(text):
+    # Remove leading and trailing whitespace
+    text = text.strip()
+
+    # Split the text into paragraphs
+    paragraphs = text.split('\n\n')
+
+    # Format each paragraph
+    formatted_paragraphs = []
+    for paragraph in paragraphs:
+        # Wrap the paragraph text to a line width of 80 characters
+        wrapped_lines = textwrap.wrap(paragraph, width=80)
+
+        # Add a blank line between each wrapped line
+        formatted_paragraph = '\n'.join(wrapped_lines)
+
+        # Add the formatted paragraph to the list
+        formatted_paragraphs.append(formatted_paragraph)
+
+    # Join the formatted paragraphs with double line breaks
+    formatted_text = '\n\n'.join(formatted_paragraphs)
+
+    return formatted_text
 
 @app.route("/json")
 def get_json():
