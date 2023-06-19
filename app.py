@@ -30,7 +30,7 @@ def home():
         
         text = response['choices'][0]['text']
         
-        return text
+        return render_template("coverletter.html", text = text)
     return render_template("index.html")
 
 @app.route("/json")
