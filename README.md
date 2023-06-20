@@ -16,7 +16,9 @@ Clone this repo to your machine
 Use `pipenv shell`
 
 Run the app with 
-```python app.py``` and ```tailwindcss -i static/src/style.css -o static/css/main.css --watchcss --watch```
+```python app.py```
+and 
+```tailwindcss -i static/src/style.css -o static/css/main.css --watchcss --watch```
 
 ## TODOS
 1. Edit this README with more relevant info
