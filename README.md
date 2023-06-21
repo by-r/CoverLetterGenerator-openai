@@ -10,7 +10,7 @@ This a flask app that utilizes openai APIs to tailor a cover letter for your nee
 - Flask
 - Tailwdindcss UI Library
 
-## Launch
+## Run Locally
 Clone this repo to your machine
 
 Fill in `.env` file based on template 
