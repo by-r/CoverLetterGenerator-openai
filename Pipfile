@@ -8,6 +8,7 @@ flask = "*"
 pytailwindcss = "*"
 openai = "*"
 python-dotenv = "*"
+djlint = "*"
 
 [dev-packages]
 
