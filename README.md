@@ -11,21 +11,21 @@ This a flask app that utilizes openai APIs to tailor a cover letter for your nee
 - Tailwdindcss UI Library
 
 ## Run Locally
-Clone this repo to your machine
+1. Clone this repo to your machine
 
-Fill in `.env` file based on template 
-### What you'll need
-```python
-//Insert your OpenAI api key here
-API_KEY=
-```
+2. Fill in `.env` file based on template   
+  ```python
+  # Make a .env file or just modify the .env.template file
+  # Insert your OpenAI api key here
+  API_KEY=
+  ```
 
-Use 
+3. Assuming you have pipenv 
 ```bash
 pipenv shell
 ```
 
-Run the app with 
+4. Run the app with 
 ```bash
 python app.py
 ```
@@ -34,6 +34,6 @@ and
 tailwindcss -i static/src/style.css -o static/css/main.css --watchcss --watch
 ```
 
-## TODOS
-1. Edit this README with more relevant info
-2. Polish UI
+## Future improvements
+1. Polish UI
+2. Make this an electron app
